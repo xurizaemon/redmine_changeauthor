@@ -2,7 +2,7 @@
 
 <p><%=l(:label_authorchange) %>
 	<em>
-		<%= @issue_user["firstname"] %> <%= @issue_user["lastname"] %>
+		<%= @issue_user.name %>
 	</em>
 </p>
 <%= form_tag({ :controller => :changeauthor, :action => "edit" }) do %> 
