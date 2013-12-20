@@ -5,7 +5,7 @@ require_dependency 'redmine_changeauthor/hooks'
 Redmine::Plugin.register :redmine_changeauthor do
 
   name 'Redmine ChangeAuthor plugin'
-  author 'Tom Stark @fragtom'
+  author 'Tom Stark @fragtom, Stephane Lapie @ASAHI Net'
   description 'Plugin for author change'
   version '1.0.0' 
   settings :default => {'redmine_changeauthor_log_setting' => 'no'}, :partial => 'settings/redmine_changeauthor_settings'
