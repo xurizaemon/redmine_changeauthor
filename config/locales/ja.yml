@@ -1,0 +1,7 @@
+ja:
+  button_authorchange: "作成者を変更する"
+  label_authorchange: "現在の作成者は "
+  head_authorchange: "新しい作成者を下記から選択してください： "
+  label_authorchange_setlog: "チケット履歴に記録しますか？ "
+  label_authorchange_setlog_description: "変更はそのチケット履歴に記録されます"
+  
