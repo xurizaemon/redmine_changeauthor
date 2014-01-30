@@ -3,15 +3,15 @@ class ChangeauthorController < ApplicationController
   layout 'admin'
   
   def index
-    @issue=Issue.find_by_id(params[:issue_id])
-    @project = Project.find(@issue.project_id)
-    @users = @project.member_principals.find(:all, :include => [:roles, :principal], :order => "firstname", :conditions => "#{Principal.table_name}.type='User'")
-    @issue_user=User.find(@issue["author_id"])
+    @issue = Issue.where(:id => params[:issue_id])
+    @project = Project.where(:id => @issue.project_id)
+    @users = @project.member_principals.includes([:roles, :principal]).where(:principal => { :type => 'User'}).order(:firstname)
+    @issue_user = User.where(:id => @issue["author_id"])
     
   end
 
   def edit
-    @issue=Issue.find_by_id(params[:issue_id])
+    @issue = Issue.where(:id => params[:issue_id])
     old_author = @issue.author
     if @issue.update_attribute(:author_id, params[:authorid])
       flash[:notice] = l(:notice_successful_update)
@@ -27,7 +27,7 @@ class ChangeauthorController < ApplicationController
   private
 
   def find_and_destroy_relation(id)
-   H4prelation.delete_all(["project_identifier = ?", id]) 
+    H4prelation.where(:project_identifier => id).delete_all 
   end
 
 end
