@@ -1,4 +1,4 @@
-<h2><%=h @issue["subject"].to_s %></h2>
+<h2><%= @issue["subject"].to_s %></h2>
 
 <p><%=l(:label_authorchange) %>
 	<em>
@@ -12,7 +12,7 @@
 	<%= hidden_field_tag "issue_id", +@issue["id"] %>
 	
 	<select id="edit-authorid" name="authorid">
-    <%= options_from_collection_for_select(@users, :user_id, :name, @issue["author_id"]) %>
+    		<%= options_from_collection_for_select(@users, :user_id, :name, @issue["author_id"]) %>
 	</select>
 </p>
 <%= submit_tag(l(:button_save), :class => 'button-small')-%>
