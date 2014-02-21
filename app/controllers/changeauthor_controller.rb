@@ -3,15 +3,15 @@ class ChangeauthorController < ApplicationController
   layout 'admin'
   
   def index
-    @issue = Issue.where(:id => params[:issue_id])
-    @project = Project.where(:id => @issue.project_id)
-    @users = @project.member_principals.includes([:roles, :principal]).where(:principal => { :type => 'User'}).order(:firstname)
-    @issue_user = User.where(:id => @issue["author_id"])
-    
+    @issue = Issue.where(:id => params[:issue_id]).first
+    @project = Project.where(:id => @issue.project_id).first
+    @users = @project.members.order(:firstname)
+    @issue_user = User.where(:id => @issue["author_id"]).first
+
   end
 
   def edit
-    @issue = Issue.where(:id => params[:issue_id])
+    @issue = Issue.where(:id => params[:issue_id]).first
     old_author = @issue.author
     if @issue.update_attribute(:author_id, params[:authorid])
       flash[:notice] = l(:notice_successful_update)
