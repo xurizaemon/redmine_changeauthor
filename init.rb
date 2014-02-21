@@ -12,7 +12,7 @@ Redmine::Plugin.register :redmine_changeauthor do
   requires_redmine :version_or_higher => '2.0.0'
   
   project_module :issue_tracking do
-    permission :change_author, :require => :member
+    permission :change_author, {:changeauthor => [:index, :edit]}, :require => :member
   end
 end
 

@@ -2,15 +2,15 @@ class ChangeauthorController < ApplicationController
   unloadable
   layout 'admin'
 
+  before_filter :find_issue_and_project_by_issue_id
+  before_filter :authorize
+
   def index
-    @issue = Issue.where(:id => params[:issue_id]).first
-    @project = Project.where(:id => @issue.project_id).first
     @users = @project.members.order(:firstname)
     @issue_user = User.where(:id => @issue["author_id"]).first
   end
 
   def edit
-    @issue = Issue.where(:id => params[:issue_id]).first
     old_author = @issue.author
     if @issue.update_attribute(:author_id, params[:authorid])
       flash[:notice] = l(:notice_successful_update)
@@ -26,6 +26,11 @@ class ChangeauthorController < ApplicationController
 
   def find_and_destroy_relation(id)
     H4prelation.where(:project_identifier => id).delete_all
+  end
+
+  def find_issue_and_project_by_issue_id
+    @issue = Issue.where(:id => params[:issue_id]).first
+    @project = Project.where(:id => @issue.project_id).first
   end
 
 end
