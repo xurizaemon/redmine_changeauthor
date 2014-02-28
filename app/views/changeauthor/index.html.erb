@@ -12,7 +12,7 @@
 	<%= hidden_field_tag "id", +@issue["id"] %>
 	
 	<select id="edit-authorid" name="authorid">
-    		<%= options_from_collection_for_select(@users, :user_id, :name, @issue["author_id"]) %>
+    		<%= principals_options_for_select(@users, @issue_user) %>
 	</select>
 </p>
 <%= submit_tag(l(:button_save), :class => 'button-small')-%>
