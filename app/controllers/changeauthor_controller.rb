@@ -7,8 +7,11 @@ class ChangeauthorController < ApplicationController
   before_filter :authorize
 
   def index
-    @users = @project.users.order(:firstname)
     @issue_user = User.where(:id => @issue["author_id"]).first
+    @users = @project.users.to_a
+    @users << @issue_user
+    @users.uniq!
+    @users.sort!
   end
 
   def edit
