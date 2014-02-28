@@ -1,6 +1,7 @@
 class ChangeauthorController < ApplicationController
   unloadable
-  layout 'admin'
+  menu_item :issues
+  default_search_scope :issues
 
   before_filter :find_issue
   before_filter :authorize
