@@ -10,7 +10,7 @@
   <h3><%= l(:head_authorchange) %></h3>
 
   <select id="edit-authorid" name="authorid">
-    <%= options_from_collection_for_select(@users, :user_id, :name, @issue.author_id) %>
+    <%= principals_options_for_select(@users, @issue.author_id) %>
   </select>
 </p>
 <%= submit_tag l(:button_save), :class => 'button-small' -%>

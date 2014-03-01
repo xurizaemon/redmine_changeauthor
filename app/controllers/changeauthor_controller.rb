@@ -8,7 +8,8 @@ class ChangeauthorController < ApplicationController
   def edit
     @users = @project.users.to_a
     @users << @issue.author
-    @users.uniq.sort_by(&:name)
+    @users.uniq!
+    @users.sort_by!(&:name)
   end
 
   def update
