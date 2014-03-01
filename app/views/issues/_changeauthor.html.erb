@@ -1,4 +1,4 @@
-<% if User.current.allowed_to?(:change_author, @project) %>
+<% if User.current.allowed_to?(:change_author, @project) && !@issue.new_record? %>
   <%= stylesheet_link_tag('redmine_changeauthor.css', :plugin => 'redmine_changeauthor') %>
   <%= javascript_tag do -%>
     if ($('#content > .contextual .redmine-authorchange-button').length == 0) {

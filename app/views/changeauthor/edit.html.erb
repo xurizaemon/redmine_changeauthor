@@ -1,18 +1,26 @@
-<h2><%= @issue.subject %></h2>
+<h2><%= issue_heading(@issue) %> - <%= @issue.subject %></h2>
 
-<p><%= l(:label_authorchange) %>
-  <em>
-    <%= @issue.author.name %>
-  </em>
-</p>
 <%= form_tag changeauthor_path(@issue), :method => 'put' do -%>
-<p>
-  <h3><%= l(:head_authorchange) %></h3>
 
+<div class="box tabular">
+
+<p><label><%= l(:label_authorchange) %></label>
+  <span><%= @issue.author.name %></span> </p>
+<p>
+  <label><%= l(:head_authorchange) %></label>
   <select id="edit-authorid" name="authorid">
     <%= principals_options_for_select(@users, @issue.author_id) %>
   </select>
 </p>
+</div>
+
 <%= submit_tag l(:button_save), :class => 'button-small' -%>
 <% end -%>
 
+<% html_title "#{@issue.tracker.name} ##{@issue.id}: #{@issue.subject}" %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'issues/sidebar' %>
+<% end %>
+
+<%= context_menu issues_context_menu_path %>

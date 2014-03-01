@@ -3,6 +3,9 @@ class ChangeauthorController < ApplicationController
   menu_item :issues
   default_search_scope :issues
 
+  helper :issues
+  helper :watchers
+
   before_filter :find_issue, :authorize
 
   def edit
