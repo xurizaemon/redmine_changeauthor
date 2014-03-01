@@ -6,7 +6,9 @@ class ChangeauthorController < ApplicationController
   before_filter :find_issue, :authorize
 
   def edit
-    @users = @project.members.order(:firstname)
+    @users = @project.users.to_a
+    @users << @issue.author
+    @users.uniq.sort_by(&:name)
   end
 
   def update

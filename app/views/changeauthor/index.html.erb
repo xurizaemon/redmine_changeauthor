@@ -1,0 +1,20 @@
+<h2><%= @issue["subject"].to_s %></h2>
+
+<p><%=l(:label_authorchange) %>
+	<em>
+		<%= @issue_user.name %>
+	</em>
+</p>
+<%= form_tag({ :controller => :changeauthor, :action => "edit" }) do %> 
+<p>
+	<h3><%=l(:head_authorchange) %></h3>
+	
+	<%= hidden_field_tag "id", +@issue["id"] %>
+	
+	<select id="edit-authorid" name="authorid">
+    		<%= principals_options_for_select(@users, @issue_user) %>
+	</select>
+</p>
+<%= submit_tag(l(:button_save), :class => 'button-small')-%>
+<% end %>
+
