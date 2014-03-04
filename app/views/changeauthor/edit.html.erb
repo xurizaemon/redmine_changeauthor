@@ -9,7 +9,7 @@
 <p>
   <label><%= l(:head_authorchange) %></label>
   <select id="edit-authorid" name="authorid">
-    <%= principals_options_for_select(@users, @issue.author_id) %>
+    <%= principals_options_for_select(@users, @issue.author) %>
   </select>
 </p>
 </div>
