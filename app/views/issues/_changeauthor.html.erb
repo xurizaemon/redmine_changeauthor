@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag('redmine_changeauthor.css', :plugin => 'redmine_changeauthor') %>
   <%= javascript_tag do -%>
     if ($('#content > .contextual .redmine-authorchange-button').length == 0) {
-      $('#content > .contextual').prepend(
+      $('#content > .contextual').append(
         '<%= link_to l(:button_authorchange), edit_changeauthor_path(@issue), :class => 'icon icon-close redmine-authorchange-button' %>'
       )
     }
