@@ -1,5 +1,5 @@
 # Bulgarian locale strings go here for Rails i18n
-de:
+bg:
   button_authorchange: "Смяна на автора"
   label_authorchange: "Настоящият автор е:"
   head_authorchange: "Смяна на настоящия автор на:"
