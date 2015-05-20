@@ -1,0 +1,7 @@
+# Spanish strings go here for Rails i18n
+es:
+  button_authorchange: "Cambiar autor"
+  label_authorchange: "El autor actual es:"
+  head_authorchange: "Cambiar el autor actual a:"
+  label_authorchange_setlog: "¿Registrar en el historial de la petición? "
+  label_authorchange_setlog_description: "Los cambios serán registrados en  el historial de la petición"
