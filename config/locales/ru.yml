@@ -1,0 +1,7 @@
+ru:
+  button_authorchange: "Сменить контролёра"
+  label_authorchange: "Контролёром является:"
+  head_authorchange: "Назначить контролёром:"
+  label_authorchange_setlog: "Делать запись в журнал??"
+  label_authorchange_setlog_description: "Измнение будет внесено в журнал данного документа"
+  permission_change_author: "Изменение контролёра задачи"
