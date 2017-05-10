@@ -5,4 +5,4 @@ en:
   head_authorchange: "Change current Author to:"
   label_authorchange_setlog: "Log in issue history? "
   label_authorchange_setlog_description: "Changes will be logged in history of that issue"
-
+  permission_change_author: "Changing issue Author"
