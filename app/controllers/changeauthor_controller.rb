@@ -5,6 +5,7 @@ class ChangeauthorController < ApplicationController
 
   helper :issues
   helper :watchers
+  helper :queries
 
   before_filter :find_issue, :authorize
 
