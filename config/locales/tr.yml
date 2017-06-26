@@ -1,7 +1,9 @@
 # Turkish locale strings go here for Rails i18n
+# Updated atopcu @ 2016-06-26
 tr:
-  button_authorchange: "Yazarı Değiştir"
-  head_authorchange: "Yeni Yazar:"
-  label_authorchange: "Şuanki Yazar:"
+  button_authorchange: "Oluşturanı Değiştir"
+  head_authorchange: "Yeni Oluşturan:"
+  label_authorchange: "Şuanki Oluşturan:"
   label_authorchange_setlog: "Tarihçeye kayıt? "
   label_authorchange_setlog_description: "Evet seçilirse bu değişikliğin kimin tarafından ne zaman yapıldığı işin tarihçesine eklenir."
+  permission_change_author: "Oluşturanı Değiştirme"
