@@ -4,6 +4,6 @@ module RedmineChangeauthor::Infectors
     infected_name = File.basename(file, '.rb').classify
     _module = const_get(infected_name)
     _class = Kernel.const_get(infected_name)
-    _class.send(:include, _module) unless _class.included_modules.include? _module
+    _class.send(:prepend, _module) unless _class.included_modules.include? _module
   end
 end
