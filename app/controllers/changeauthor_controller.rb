@@ -7,7 +7,7 @@ class ChangeauthorController < ApplicationController
   helper :watchers
   helper :queries
 
-  before_filter :find_issue, :authorize
+  before_action :find_issue, :authorize
 
   def edit
     @users = @project.users.to_a
